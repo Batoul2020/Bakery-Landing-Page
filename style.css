@@ -1,0 +1,130 @@
+/* Color Palette & Variables */
+:root {
+    --primary: #d4a373;
+    --secondary: #faedcd;
+    --dark: #4a3728;
+    --light: #fefae0;
+    --white: #ffffff;
+    --red: #e63946;
+    --shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Reset & Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+.container { max-width: 1200px; margin: auto; padding: 0 2rem; }
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+
+/* Header & Nav */
+header {
+    background: var(--white);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 0 2rem; }
+.logo { font-size: 1.8rem; font-weight: 700; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; }
+.nav-links li a { text-decoration: none; color: var(--dark); margin-left: 2rem; font-weight: 600; transition: 0.3s; }
+.nav-links li a:hover { color: var(--primary); }
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* Hero Section */
+.hero { min-height: 85vh; background: var(--secondary); display: flex; align-items: center; padding-top: 100px; }
+.hero-container { display: flex; align-items: center; gap: 2rem; }
+.hero-content { 
+    flex: 1; 
+    padding-left: 5%; 
+}
+.hero-content h1 { 
+    font-size: 4rem; 
+    line-height: 1.1; 
+    margin-bottom: 1.5rem; 
+}
+.hero-image-wrapper { flex: 1; text-align: center; }
+.floating-img { width: 100%; max-width: 480px; animation: float 6s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+/* Buttons */
+.btn { display: inline-block; padding: 0.8rem 2rem; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; transition: 0.3s; }
+.btn:hover { background: var(--dark); transform: translateY(-3px); }
+
+/* Video */
+.video-promo { padding: 4rem 0; background: var(--white); }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Menu Grid */
+.menu { padding: 6rem 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+.card { background: var(--white); padding: 1.5rem; border-radius: 20px; text-align: center; box-shadow: var(--shadow); transition: 0.3s; }
+.card img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; margin-bottom: 1.5rem; }
+.price { color: var(--primary); font-weight: 700; font-size: 1.3rem; }
+
+/* Discount Section */
+.discount-section { padding: 6rem 0; background: var(--white); }
+.discount-header { text-align: center; margin-bottom: 3rem; }
+.badge { background: var(--red); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; text-transform: uppercase; }
+.discount-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.discount-item { position: relative; height: 400px; border-radius: 20px; overflow: hidden; }
+.discount-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.discount-overlay { position: absolute; inset: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; color: white; opacity: 0; transition: 0.4s; }
+.discount-item:hover .discount-overlay { opacity: 1; }
+.discount-item:hover img { transform: scale(1.1); }
+.discount-tag { background: var(--primary); padding: 5px 10px; border-radius: 5px; width: fit-content; }
+
+/* Gallery Grid */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.gallery-grid img { width: 100%; height: 300px; object-fit: cover; transition: 0.5s; cursor: pointer; }
+.gallery-grid img:hover { filter: brightness(70%); transform: scale(1.02); }
+
+/* Testimonials */
+.testimonials { padding: 5rem 0; background: var(--secondary); }
+.testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.testimonial-box { background: var(--white); padding: 2rem; border-radius: 15px; text-align: center; }
+
+/* Contact */
+.contact { padding: 6rem 0; }
+.contact-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; }
+form { display: flex; flex-direction: column; gap: 1rem; }
+form input, form textarea { padding: 1rem; border: none; border-radius: 10px; background: var(--white); }
+.whatsapp-btn { background: #25d366; color: white; padding: 1rem; border-radius: 10px; text-decoration: none; font-weight: bold; display: block; text-align: center; }
+
+/* Footer */
+footer { background: var(--dark); color: white; text-align: center; padding: 3rem 0; }
+footer .socials { 
+    margin-top: 1.5rem; 
+}
+footer .socials a {
+    color: var(--primary); /* Changed from default blue to your warm primary brown */
+    margin: 0 15px; 
+    font-size: 2.2rem; /* Resized to look bigger */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+footer .socials a:hover { 
+    color: var(--secondary); /* Light cream hover effect */
+    transform: scale(1.2); /* Slight pop-out effect when hovering */
+}
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .testimonial-grid, .contact-wrapper { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: var(--white); flex-direction: column; padding: 2rem; box-shadow: var(--shadow); }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+}
